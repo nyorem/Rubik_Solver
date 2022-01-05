@@ -1,8 +1,9 @@
 #ifndef DISPLAY_HPP
 # define DISPLAY_HPP
 
+#include <glad/glad.h>
+
 # include <math.h>
-# include <OpenGL/gl3.h>
 # include <GLFW/glfw3.h>
 # include "rubik.hpp"
 

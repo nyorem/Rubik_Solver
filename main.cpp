@@ -1,7 +1,9 @@
 #include "Cube.hpp"
 #include "Solver.hpp"
 #include "Display.hpp"
-#include "Rubik.hpp"
+// #include "Rubik.hpp"
+
+#include <cstring>
 
 Cube cube;
 

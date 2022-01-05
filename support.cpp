@@ -1,4 +1,5 @@
 #include "rubik.hpp"
+#include <cstring>
 
 char		*filetostr(char *filename)
 {

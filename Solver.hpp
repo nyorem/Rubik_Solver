@@ -8,6 +8,7 @@
 # include <queue>
 # include <unordered_set>
 # include <chrono>
+# include <memory>
 
 # define PTR std::shared_ptr<Cube>
 # define MPTR(y) std::make_shared<Cube>(y)

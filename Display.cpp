@@ -1,6 +1,9 @@
 # include "Display.hpp"
 
-bool Display::spin = 1;
+#include <cstring>
+#include <stdexcept>
+
+bool Display::spin = 0;
 bool Display::go = 1;
 bool Display::rot = 0;
 string Display::waitlist;
@@ -16,9 +19,15 @@ Display::Display()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+	// glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	window = glfwCreateWindow(1200, 1200, "Rubik", NULL, NULL);
 	glfwMakeContextCurrent(window);
+
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        throw std::runtime_error("Failed to initialize GLAD");
+    }
+
 	glEnable(GL_DEPTH_TEST);
 	initbufmatrix();
 	buffervertexsetup();
