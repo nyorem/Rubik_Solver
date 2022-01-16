@@ -6,6 +6,7 @@
 # include <iomanip>
 # include <unistd.h>
 # include <queue>
+# include <memory>
 # include <unordered_set>
 # include <chrono>
 

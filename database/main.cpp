@@ -13,7 +13,6 @@ int main(){
 	for (int phase = 1; phase <= 4; phase++){
 		name[5] = '0' + phase;
 		ofs.open(name);
-		int i = 0;
 		queue<Cube> queue;
 		queue.push(solverCube);
 		s.BFS(0, queue);

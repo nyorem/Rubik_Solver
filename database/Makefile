@@ -1,9 +1,7 @@
 NAME = Rubik
 SRC = *.cpp
 OBJ = $(SRC:.cpp=.o)
-FRAMEWORKS = -framework OpenGl -w
-BREW_INC = -I ~/.brew/include
-GLFW_LINK = -L ~/.brew/lib -lglfw
+LDFLAGS = -g -lGL -Wall -lglfw -Iinclude -ldl -lpthread
 
 RED = "\033[1;38;2;225;20;20m"
 ORANGE = "\033[1;38;2;255;120;10m"
@@ -16,9 +14,12 @@ WHITE = "\033[1;38;2;255;250;232m"
 
 all: $(NAME)
 
+glad.o: ../src/glad.c
+	$(CC) -c -I../include $< -o $@
+
 $(NAME): $(SRC)
 	@echo $(YELLO)Making $(NAME)
-	@g++ -std=c++11 $(SRC) -o $(NAME) $(FRAMEWORKS) $(BREW_INC) $(GLFW_LINK)
+	@g++ -std=c++11 $(SRC) glad.o -o $(NAME) $(LDFLAGS)
 	@echo $(GREEN)Done!
 
 clean:
