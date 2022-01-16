@@ -1,7 +1,7 @@
 #include "rubik.hpp"
 #include <cstring>
 
-char		*filetostr(char *filename)
+char		*filetostr(const char *filename)
 {
 	char	buf[1000];
 	char	*ret;

@@ -56,7 +56,7 @@ string mergeExtras(string moves){
 	char prev = 0;
 	int num = 0;
 	string out = "";
-	for (int i = 0; i < moves.size(); i+=2){
+	for (size_t i = 0; i < moves.size(); i+=2){
 		if (moves[i] == prev){
 			num = (num + moves[i + 1] - '0') % 4;
 			out = out.substr(0,out.size() - 2);
@@ -105,7 +105,6 @@ void hashSolve(Cube *solverCube, Solver *s, string *output, Display *display)
 {
 	char	face;
 	int		num;
-	int		i = 0;
 	Cube 	c;
 	for (int phase = 1; phase <= 4; phase++)
 	{
@@ -144,7 +143,6 @@ void bfsSolve(Cube *solverCube, Solver *s, string *output, Display *display)
 	for (int phase = 1; phase <= 4; phase++)
 	{
 		printExplanation(phase);
-		int i = 0;
 		queue<Cube> queue;
 		queue.push(*solverCube);
 		*solverCube = s->BFS(0, queue);

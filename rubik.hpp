@@ -6,7 +6,7 @@
 # include <unordered_map>
 # include "Cube.hpp"
 
-char	*filetostr(char *filename);
+char	*filetostr(const char *filename);
 void	mult(float *a, float *b, float *p);
 
 # define RED "\e[1;38;2;225;20;20m"

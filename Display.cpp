@@ -54,7 +54,6 @@ void	Display::getshader()
 	glShaderSource(vertexshader, 1, &vsrc, NULL);
 	glCompileShader(vertexshader);
 	int success;
-    char infoLog[512];
     glGetShaderiv(vertexshader, GL_COMPILE_STATUS, &success);
    
 	fragmentshader = glCreateShader(GL_FRAGMENT_SHADER);
